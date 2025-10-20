@@ -88,4 +88,36 @@ public class ClienteDAO implements IClienteDAO{
         }
         return false;
     }
+
+    @Override
+    public List<Object[]> findClientesConMayorGasto() {
+        try {
+            String jpql = "SELECT c.nombre, c.apePaterno, SUM(p.totalPagar) as gastoTotal " +
+                    "FROM Pedido p JOIN p.cliente c " +
+                    "GROUP BY c.id ORDER BY gastoTotal DESC";
+            return em.createQuery(jpql, Object[].class).setMaxResults(5).getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    @Override
+    public List<Cliente> findClientesSinCompras() {
+        return List.of();
+    }
+
+    @Override
+    public List<Cliente> findClientesPorPreferencia(String preferencia) {
+        return List.of();
+    }
+
+    @Override
+    public List<Cliente> findClientesRecomendadosPor(Integer recomendadorId) {
+        return List.of();
+    }
+
+    @Override
+    public Object findUltimoPedidoPorCliente(Integer clienteId) {
+        return null;
+    }
 }
