@@ -10,4 +10,6 @@ public interface IHotdogDAO {
     List<HotDog> getAllHotdogs();
     boolean update(HotDog hotDog);
     boolean delete(long id);
+
+
 }

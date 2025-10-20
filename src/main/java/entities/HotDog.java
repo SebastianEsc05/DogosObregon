@@ -23,6 +23,11 @@ public class HotDog {
     public HotDog() {
     }
 
+    public HotDog(String nombre, BigDecimal precio, BigDecimal iva){
+        this.nombre = nombre;
+        this.precio = precio;
+        this.IVA = iva;
+    }
     public HotDog(long id, String nombre, BigDecimal precio, BigDecimal IVA, Set<PedidoDetalle> detalles) {
         this.id = id;
         this.nombre = nombre;

@@ -27,6 +27,13 @@ public class Pedido {
     public Pedido() {
     }
 
+    public Pedido(Cliente cliente, LocalDateTime fecha, MetodoPago metodoPago, Set<PedidoDetalle> detalles) {
+        this.cliente = cliente;
+        this.fecha = fecha;
+        this.metodoPago = metodoPago;
+        this.detalles = detalles;
+    }
+
     public Pedido(long id, Cliente cliente, LocalDateTime fecha, MetodoPago metodoPago, Set<PedidoDetalle> detalles) {
         this.id = id;
         this.cliente = cliente;
