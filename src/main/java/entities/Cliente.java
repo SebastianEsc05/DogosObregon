@@ -2,6 +2,7 @@ package entities;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.Set;
 
 @Entity
@@ -124,6 +125,13 @@ public class Cliente {
 
     public void setPedidos(Set<Pedido> pedidos) {
         this.pedidos = pedidos;
+    }
+
+    public Integer getEdad() {
+        if (this.fecha_nacimiento != null) {
+            return Period.between(this.fecha_nacimiento, LocalDate.now()).getYears();
+        }
+        return null;
     }
 
     @Override
