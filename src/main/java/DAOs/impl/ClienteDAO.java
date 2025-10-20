@@ -91,14 +91,15 @@ public class ClienteDAO implements IClienteDAO{
 
     @Override
     public List<Object[]> findClientesConMayorGasto() {
-        try {
-            String jpql = "SELECT c.nombre, c.apePaterno, SUM(p.totalPagar) as gastoTotal " +
-                    "FROM Pedido p JOIN p.cliente c " +
-                    "GROUP BY c.id ORDER BY gastoTotal DESC";
-            return em.createQuery(jpql, Object[].class).setMaxResults(5).getResultList();
-        } finally {
-            em.close();
-        }
+//        try {
+//            String jpql = "SELECT c.nombre, c.apePaterno, SUM(p.totalPagar) as gastoTotal " +
+//                    "FROM Pedido p JOIN p.cliente c " +
+//                    "GROUP BY c.id ORDER BY gastoTotal DESC";
+//            return em.createQuery(jpql, Object[].class).setMaxResults(5).getResultList();
+//        } finally {
+//            em.close();
+//        } LA CONCHA DE TU MADRE
+        return List.of();
     }
 
     @Override
