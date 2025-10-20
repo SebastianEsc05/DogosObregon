@@ -3,10 +3,10 @@
     <persistence-unit name="DogosObregonPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <class>models.Cliente</class>
-        <class>models.HotDog</class>
-        <class>models.Pedido</class>
-        <class>models.PedidoDetalle</class>
+        <class>entities.Cliente</class>
+        <class>entities.HotDog</class>
+        <class>entities.Pedido</class>
+        <class>entities.PedidoDetalle</class>
 
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/DogosObregonPU"/>

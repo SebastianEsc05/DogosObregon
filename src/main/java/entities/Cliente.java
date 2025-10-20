@@ -1,10 +1,11 @@
-package models;
+package entities;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
+//@Table(name = "clientes")
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
